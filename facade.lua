@@ -24,9 +24,9 @@ local function safeExportCall(resourceName, funcName, ...)
         exportsCache[resourceName] = exports[resourceName];
     end
 
-    local success <const>, result <const> = pcall(function()
+    local success <const>, result <const> = pcall(function(...)
         return exportsCache[resourceName][funcName](nil --[[ UNUSED ARG ]], ...);
-    end);
+    end, ...);
 
     if (not success) then
         print(string.format("^1Error calling %s.%s: %s^7", resourceName, funcName, result));
