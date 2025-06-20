@@ -1,3 +1,10 @@
+---[[
+--- This file is part of the High Scripts Facade Phone module.
+--- Do not load this file directly, this is a declaration file for the High Scripts Phone module.
+---]]
+
+---@meta HighPhone
+
 ---@class MediaAttachment
 ---@field type 'image' | 'video'
 ---@field url string URL of the media attachment
