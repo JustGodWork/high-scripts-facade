@@ -51,6 +51,17 @@
 ---@field provider string Name of the provider (e.g. 'High Mobile')
 ---@field strength number Signal strength
 
+---@class MailUserPreferences
+---@field allowPlayersMail boolean
+
+---@class MailUser
+---@field system? boolean - Is the user a reserved user?
+---@field playerId? number - Player ID
+---@field address string - Email address
+---@field name string - Real name and lastname
+---@field photo? string - User photo
+---@field preferences { allowPlayersMail: boolean }
+
 ---@class HighScriptsSharedPhone
 HighScripts.Shared.Phone = {};
 
@@ -150,7 +161,7 @@ function HighScripts.Server.Phone.sendMail(data, source) end
 
 --- Get a player's mail account data
 ---@param source number Player's ID
----@return table MailAccountData -- Not documented, but likely returns the player's mail account data as a table.
+---@return MailUser
 --- ```lua
 --- local account <const> = HighScripts.Server.Phone.getPlayerMailAccount(source);
 --- print(account?.address);
@@ -159,7 +170,7 @@ function HighScripts.Server.Phone.getPlayerMailAccount(source) end
 
 --- Get an offline player's mail account data by player's identifier
 ---@param identifier string Player's identifier
----@return table MailAccountData -- Not documented, but likely returns the player's mail account data as a table.
+---@return MailUser
 --- ```lua
 --- local account <const> = HighScripts.Server.Phone.getOfflinePlayerMailAccount('char1:2gtp1d6c57d7989ba1209e2c6gc9002f4872b856');
 --- print(account?.address);
