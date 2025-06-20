@@ -75,7 +75,15 @@ local metatable <const> = {
     __index = function(self, scriptName)
         assert(type(scriptName) == "string", "scriptName must be a string");
         assert(resources[scriptName], string.format("Invalid scriptName: '%s'.", scriptName));
-        rawset(self, scriptName, createFacade(scriptName));
+
+        local value = rawget(self, scriptName);
+
+        if (not value) then
+            value = createFacade(scriptName);
+            rawset(self, scriptName, value);
+        end
+
+        return value;
     end,
     __newindex = function(self, key, value)
         error('This is a read-only table. You cannot add new keys to it.', 2);
