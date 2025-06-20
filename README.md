@@ -31,7 +31,7 @@ This project provides a unified interface to interact with High-Scripts exports,
     ```
 
 4. **Resource Safety:**
-    - The facade ensures the target resource (e.g., `high_phone`) is started before calling its exports.
+    - The facade ensures the target resource (e.g., `high-phone`) is started before calling its exports.
     - Errors are logged to the console for easier debugging.
 
 ## Contributing

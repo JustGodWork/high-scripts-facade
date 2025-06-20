@@ -1,6 +1,6 @@
 ---@enum HighScriptsResource
 local resources <const> = {
-    Phone = "high_phone",
+    Phone = "high-phone",
     -- Add other resources here as needed
 };
 local exportsCache <const> = {}; ---@type table<string, table<string, function>>
