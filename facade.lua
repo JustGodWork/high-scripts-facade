@@ -93,11 +93,3 @@ local metatable <const> = {
 setmetatable(HighScripts.Shared, metatable);
 setmetatable(HighScripts.Server, metatable);
 setmetatable(HighScripts.Client, metatable);
-
-for k, v in pairs(resources) do
-    if (IsStarted(v)) then
-        HighScripts.Shared[k] = {};
-        HighScripts.Server[k] = {};
-        HighScripts.Client[k] = {};
-    end
-end
